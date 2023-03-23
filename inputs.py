@@ -26,10 +26,10 @@ def input_submenu_outputs() -> int:
             return int(menu_item)
         else:
             print("УПС! Что-то не так :(\nЧисло некорректно\n")
-            input_menu_item()
+            input_submenu_outputs()
     else:
         print("УПС! Что-то не так :(\nВведите числа, указанные напротив пунктов меню\n")
-        input_menu_item()
+        input_submenu_outputs()
 
 
 def input_note():
@@ -49,3 +49,17 @@ def input_note():
     data_list.append(data_sublist)
     recording_file(data_list)
 
+def input_number_note() -> int:
+    data_notes = read_file()
+    len_list_data = len(data_notes)
+    number_note = input('Введите номер заметки:')
+    if number_note.isdigit():
+        number = int(number_note)
+        if 0 <= number < len_list_data:
+            return int(number)
+        else:
+            print("УПС! Что-то не так :(\nВидимо такой записи нет\n")
+            input_number_note()
+    else:
+        print("УПС! Что-то не так :(\nВведите числа, буковки и символы не подходят\n")
+        input_number_note()
