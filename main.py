@@ -1,8 +1,7 @@
+from controller import start_app
 
 
-
-
-print("Hello world")
+start_app()
 
 
 
