@@ -63,3 +63,18 @@ def input_number_note() -> int:
     else:
         print("УПС! Что-то не так :(\nВведите числа, буковки и символы не подходят\n")
         input_number_note()
+
+def input_user_filter_date():
+    CHECK_CORRECT_LEN_STR = 21 #'DD-MM-YYYY DD-MM-YYYY'
+    date = input()
+
+    check_digit = "".join(c for c in date if c.isdecimal()) # убираем все символы, кроме чисел
+
+    if len(date) == CHECK_CORRECT_LEN_STR and check_digit.isdigit():
+        date_list = date.split() #['22-22-2222', '22-22-2222']
+        return date_list
+    else:
+        print("УПС! Кажется вы ввели не корректные данные"
+              "\nПопробуйте в следующий раз")
+
+
