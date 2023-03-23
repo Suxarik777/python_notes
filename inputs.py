@@ -17,7 +17,7 @@ def input_menu_item() -> int:
         print("УПС! Что-то не так :(\nВведите числа, указанные напротив пунктов меню\n")
         input_menu_item()
 
-def input_submenu_outputs() -> int:
+def input_submenu() -> int:
     MENU_ITEMS = 3
     menu_item_string = input('Введите пункт меню:\n')
     if menu_item_string.isdigit():
@@ -26,10 +26,10 @@ def input_submenu_outputs() -> int:
             return int(menu_item)
         else:
             print("УПС! Что-то не так :(\nЧисло некорректно\n")
-            input_submenu_outputs()
+            input_submenu()
     else:
         print("УПС! Что-то не так :(\nВведите числа, указанные напротив пунктов меню\n")
-        input_submenu_outputs()
+        input_submenu()
 
 
 def input_note():

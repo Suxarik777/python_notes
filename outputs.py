@@ -1,5 +1,5 @@
 from func_for_file import read_file
-from inputs import input_submenu_outputs, input_number_note, input_user_filter_date
+from inputs import input_submenu, input_number_note, input_user_filter_date
 
 
 def output_note():
@@ -12,7 +12,7 @@ def output_note():
            "\n3 - Выборку заметок по дате"
     print(text)
 
-    submenu_item = input_submenu_outputs() #проверка ввода в inputs
+    submenu_item = input_submenu() #проверка ввода в inputs
 
     if submenu_item == 1:
         show_all: str = ''
