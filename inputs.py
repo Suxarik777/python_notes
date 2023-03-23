@@ -17,8 +17,22 @@ def input_menu_item() -> int:
         print("УПС! Что-то не так :(\nВведите числа, указанные напротив пунктов меню\n")
         input_menu_item()
 
+def input_submenu_outputs() -> int:
+    MENU_ITEMS = 3
+    menu_item_string = input('Введите пункт меню:\n')
+    if menu_item_string.isdigit():
+        menu_item = int(menu_item_string)
+        if 0 < menu_item <= MENU_ITEMS:
+            return int(menu_item)
+        else:
+            print("УПС! Что-то не так :(\nЧисло некорректно\n")
+            input_menu_item()
+    else:
+        print("УПС! Что-то не так :(\nВведите числа, указанные напротив пунктов меню\n")
+        input_menu_item()
 
-def input_line():
+
+def input_note():
     data_list = read_file()
     user_input = input("Пишите заметку: ")
     data_sublist = [user_input]
