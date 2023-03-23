@@ -30,3 +30,39 @@ def edit_row_note():
 
     if submenu_item == 3:
         print('Ok ;)')
+
+
+def delete_row_note():
+    data_array = read_file()
+
+    text = 'Введите номер заметки, которую будем удалять'
+    print(text)
+
+    index_row = input_number_note()  # проверка ввода в inputs
+
+    row_text = f"Вы выбрали заметку: \n{' '.join(data_array[index_row])}"
+    print(row_text + "\n")
+
+    text_1 = 'Что делаем?' \
+             '\n1 - Удаляем' \
+             '\n2 - Выбираем другую' \
+             '\n3 - Ничего не делаем'
+    print(text_1)
+
+    submenu_item = input_submenu()  # проверка ввода числа меню
+
+    if submenu_item == 1:
+        del data_array[index_row]
+
+        #формируем новые порядковые числа
+        for i in range(len(data_array)):
+            data_array[i][0] = str(i)
+
+        recording_file(data_array)
+        print("Данные удалены")
+
+    if submenu_item == 2:
+        delete_row_note()
+
+    if submenu_item == 3:
+        print('Ok ;)')
