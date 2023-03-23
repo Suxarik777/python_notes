@@ -6,7 +6,7 @@ os.chdir(os.path.dirname(__file__))
 
 def read_file():
     with open('notes_data.csv', 'r', encoding='utf-8') as csvfile:
-        file_reader = csv.reader(csvfile, delimetr=';', skipinitialspace=False)
+        file_reader = csv.reader(csvfile, skipinitialspace=False)
         array = []
         for line, row in enumerate(file_reader):
             file_reader_to_list = (';'.join(row)).split(';')
@@ -19,3 +19,4 @@ def recording_file(array):
         for text in array:
             res_text = ";".join(text)
             file.writelines(f'{res_text}\n')
+
