@@ -16,7 +16,7 @@ def read_file():
 
 def recording_file(array):
     with open('notes_data.csv', 'w', encoding='utf-8') as file:
-        for text in array:
-            res_text = ";".join(text)
+        for line in array:
+            res_text = ";".join(line)
             file.writelines(f'{res_text}\n')
 
