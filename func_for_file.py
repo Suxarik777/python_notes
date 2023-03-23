@@ -19,4 +19,3 @@ def recording_file(array):
         for line in array:
             res_text = ";".join(line)
             file.writelines(f'{res_text}\n')
-
